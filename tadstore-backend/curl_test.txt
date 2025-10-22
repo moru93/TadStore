@@ -1,0 +1,73 @@
+• --- Registrar usuario ---
+
+curl -X POST http://127.0.0.1:8000/api/register \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"name":"Cliente","email":"cliente@tad.com","password":"1234567891011","password_confirmation":"1234567891011"}'
+
+
+curl -X POST http://127.0.0.1:8000/api/register \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"name":"Admin","email":"admin@tadstores.com","password":"4321tadstores","password_confirmation":"4321tadstores", "role":"admin" }'
+
+
+• --- Login cliente ---
+--- token temporal 1|B5VUKfiIksdrmwxIsItsY09GipJiVtslu6062tNh
+
+curl -X POST http://127.0.0.1:8000/api/login \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"email":"cliente@tad.com","password":"1234567891011"}'
+
+
+• --- Login admin ---  
+--- token temporal 1|pVF2hthDvLwgJsSNUwW86r6ZoNXjZj3uhie0VMdr
+
+curl -X POST http://127.0.0.1:8000/api/login \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-d '{"email":"admin@tadstore.com","password":"4321tadstore"}'
+
+
+• --- Crear Categoría (solo admin) ---
+
+curl -X POST http://127.0.0.1:8000/api/categories \
+-H "Accept: application/json" \
+-H "Authorization: Bearer 4|iQXrCgcUCkYHk9Cir4F510rESG3g3pr6aSIoQInv" \
+-F "name=Ropa" \
+-F "description=Categoria de ropa general"
+
+
+• --- Crear Producto (solo admin) ---
+
+curl -X POST http://127.0.0.1:8000/api/products \
+-H "Accept: application/json" \
+-H "Authorization: Bearer 2|7N0KhS2ZyCT65opu4zHtG3BjH4xb8Xe2yXgHn5Fm" \
+-F "category_id=6" \
+-F "name=Camisa Azul" \
+-F "price=79.99" \
+-F "stock=10" \
+-F "image=@C:/Users/kmoru/OneDrive/Imágenes/2023-04-26.png"
+
+
+• --- Crear Orden (solo cliente) ---
+
+curl -X POST http://127.0.0.1:8000/api/orders \
+-H "Accept: application/json" \
+-H "Authorization: Bearer 1|pVF2hthDvLwgJsSNUwW86r6ZoNXjZj3uhie0VMdr" \
+-H "Content-Type: application/json" \
+-d '{
+  "shipping_address": "Calle 123 #45-67, Bogota",
+  "items": [
+    {"product_id": 1, "quantity": 2}
+  ]
+}'
+
+
+
+• ---  ---
+
+
+
+• ---  ---

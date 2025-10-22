@@ -1,0 +1,31 @@
+:root {
+  --radius: 10px;
+  --shadow-elevated: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --padding-card: 1.5rem;
+}
+
+/* ===============================
+   VARIABLES DE COLOR
+   =============================== */
+:root {
+  --color-bg: #1e1e1e;           /* Fondo general gris oscuro */
+  --color-surface: #2a2a2a;      /* Cajas o tarjetas */
+  --color-accent: #ffb600;       /* Amarillo ocre */
+  --color-accent2: #755400;       /* Amarillo ocre */
+  --color-text: #eaeaea;         /* Texto principal */
+  --color-titleprod: #030804;         /* Texto principal */
+  --color-muted: #bdbdbd;        /* Texto secundario */
+  --color-border: #3a3a3a;       /* Bordes suaves */
+  --color-black: #000;       /* Bordes suaves */
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #1a1a1a;
+  color: #fff;
+}
